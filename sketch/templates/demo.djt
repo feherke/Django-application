@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load text_placeholder %}
+<html lang=en>
+
+<head>
+<meta charset=utf-8>
+<title>{{ type | title }} Placeholder Demo</title>
+<link rel=stylesheet href="{% static "demo.css" %}">
+</head>
+
+<body>
+
+<h1>{{ type | title }} Placeholder Demo</h1>
+
+{% if form.errors %}
+<p class=message>The placeholder {{ type }} was not generated due to the below error{{ form.errors | pluralize }}</p>
+{% endif %}
+
+<form action="" method=POST>
+{{ form.as_p }}
+{% csrf_token %}
+<input type=submit value="Generate {{ type }} placeholder">
+{% if data %}
+<datalist id=color>
+{% for one in data %}
+<option value="{{ one }}">
+{% endfor %}
+</datalist>
+{% endif %}
+</form>
+
+{% if form.is_valid %}
+<div id=output>
+{% ifequal type "image" %}<img src="/sketch/iph.png?{% for one in form %}{% if one.value %}{{ one.name }}={{ one.value | urlencode }}&{% endif %}{% endfor %}">{% endifequal %}
+{% ifequal type "text" %}{% filter linebreaks %}{% blahblock form.entity.value form.length.value %}{{ form.sample.value }}{% endblahblock %}{% endfilter %}{% endifequal %}
+</div>
+{% endif %}
+
+</body>
+
+</html>

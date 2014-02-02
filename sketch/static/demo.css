@@ -1,0 +1,60 @@
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  color: white;
+  text-indent: 5em;
+  text-shadow: black 0 0 20px;
+  background-image: linear-gradient(to right, white, rgba(255,255,255,0) 1em)
+    , linear-gradient(to left, white, rgba(255,255,255,0) 1em)
+    , linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,.2), rgba(255,255,255,0));
+}
+
+form p * {
+  vertical-align: top;
+}
+
+label {
+  display: inline-block;
+  width: 10em;
+}
+
+p input,
+p select,
+p textarea {
+  width: 15em;
+}
+
+span.helptext {
+  color: gray;
+}
+
+p.message {
+  color: maroon;
+  text-indent: 10em;
+  border-bottom-style: double;
+  border-width: 3px;
+  border-color: maroon;
+}
+
+ul.errorlist {
+  color: darkred;
+  background-color: #fdd;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-left: 10em;
+  margin-bottom: 0;
+}
+
+ul.errorlist+p {
+  background-image: linear-gradient(to right, transparent 10em, #fdd 5em);
+  margin-top: 0;
+}
+
+div#output {
+  border-style: outset;
+  padding: 10px;
+  margin-top: 25px;
+}

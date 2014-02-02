@@ -1,0 +1,13 @@
+= Django Application
+
+The [[http://docs.djangoproject.com/|Django]] web framework is a cute puzzle where you can do many things from the pieces you got and an addictive RPG where you can customize your weapon against each enemy type.
+
+Django applictions are both reusable and extensible - two good reasons to share them with the world.
+
+This repository contains a collection of applications, each directory contains one application and the related files.
+
+Here are some applications I wrote.
+
+* **sketch** - Provides image and text placeholders to fill web page sketches with temporary data.
+
+These applications were intentionally kept short. For details see the [[http://feherke.github.io/python/django/|Django section of my site]].
